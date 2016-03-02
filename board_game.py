@@ -16,7 +16,7 @@ def locations():
 
 
 def move_player(player,move):
-    x,y=start
+    x,y=player
     if move=='LEFT':
         x-=1
     if move=='RIGHT':
@@ -62,15 +62,16 @@ while(True):
         break
     if move in moves:
         player=move_player(player,move)
+    
+    elif player==door:
+        print("you win")
+        break
+    elif player==monster:
+        print("you were eaten by the monster")
+        break
     else:
         print("you cant move further")
         continue
-    if player==door:
-        print("you win")
-        break
-    if player==monster:
-        print("you were eaten by the monster")
-        break
     
         
 
